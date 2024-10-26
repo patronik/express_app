@@ -1,5 +1,8 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import fs from 'fs';
+import https from 'https';
+import http from 'http';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import indexRouter from './routes/index.js';
@@ -11,30 +14,36 @@ dotenv.config();
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// Middleware
+// Middleware and routes setup
 app.use(express.json());
 app.use(logger);
-
-// Template Engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-
-// Routes
 app.use('/', indexRouter);
-
-// Error Handling
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send('Something went wrong!');
-});
 
 // Database connection
 connectDB();
 
-// Start server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+// HTTP & HTTPS Servers
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(
+  {
+    key: fs.readFileSync('../cert/privkey.pem'),
+    cert: fs.readFileSync('../cert/cert.pem'),
+  },
+  app
+);
+
+// Start servers
+const PORT_HTTP = process.env.PORT_HTTP || 80;
+const PORT_HTTPS = process.env.PORT_HTTPS || 443;
+
+httpServer.listen(PORT_HTTP, () => {
+  console.log(`HTTP server running on port ${PORT_HTTP}`);
+});
+
+httpsServer.listen(PORT_HTTPS, () => {
+  console.log(`HTTPS server running on port ${PORT_HTTPS}`);
 });
 
 export default app;
