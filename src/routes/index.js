@@ -13,7 +13,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
   res.render('index', { 
       baseUrl: process.env.BASE_URL || 'http://localhost:3000',
-      title: 'User management' 
+      title: 'User Management' 
     }
   );
 });

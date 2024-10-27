@@ -15,7 +15,7 @@
   </style>
 </head>
 <body>
-  <h1>User Management</h1>
+  <h1><%= title %></h1>
 
   <!-- User Grid/Table -->
   <table id="userTable">
@@ -51,7 +51,7 @@
   </form>
 
   <script>
-    const baseUrl = "<%= baseUrl %>";
+    const baseUrl = "<%= baseUrl %>/users";
 
     // Fetch and display users in the table
     async function fetchUsers() {
@@ -85,14 +85,14 @@
       const user = { name, email, age };
       if (id) {
         // Update user
-        await fetch(`${apiUrl}/${id}`, {
+        await fetch(`${baseUrl}/${id}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(user),
         });
       } else {
         // Create new user
-        await fetch(apiUrl, {
+        await fetch(baseUrl, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(user),
@@ -114,7 +114,7 @@
 
     // Delete user
     async function deleteUser(id) {
-      await fetch(`${apiUrl}/${id}`, { method: "DELETE" });
+      await fetch(`${baseUrl}/${id}`, { method: "DELETE" });
       fetchUsers();
     }
 
