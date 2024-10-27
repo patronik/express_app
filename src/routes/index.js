@@ -11,9 +11,17 @@ const router = express.Router();
 
 // Home route
 router.get('/', (req, res) => {
-  res.render('index', { 
+  res.render('index', {       
+      title: 'Home page' 
+    }
+  );
+});
+
+// Users route
+router.get('/admin', (req, res) => {
+  res.render('admin', { 
       baseUrl: process.env.BASE_URL || 'http://localhost:3000',
-      title: 'User Management' 
+      title: 'Admin panel' 
     }
   );
 });
