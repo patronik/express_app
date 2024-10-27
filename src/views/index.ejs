@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>User Management</title>
+  <title><%= title %></title>
   <style>
     /* Basic styling */
     body { font-family: Arial, sans-serif; margin: 20px; }
@@ -51,11 +51,11 @@
   </form>
 
   <script>
-    const apiUrl = "https://voinatech.com/users";
+    const baseUrl = "<%= baseUrl %>";
 
     // Fetch and display users in the table
     async function fetchUsers() {
-      const response = await fetch(apiUrl);
+      const response = await fetch(baseUrl);
       const users = await response.json();
       const tableBody = document.querySelector("#userTable tbody");
       tableBody.innerHTML = "";

@@ -11,7 +11,11 @@ const router = express.Router();
 
 // Home route
 router.get('/', (req, res) => {
-  res.render('index', { title: 'My Express App' });
+  res.render('index', { 
+      baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+      title: 'User management' 
+    }
+  );
 });
 
 // User CRUD routes
