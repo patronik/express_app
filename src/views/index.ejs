@@ -1,20 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><%= title %></title>
-  <style>
-    /* Basic styling */
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-    th, td { padding: 10px; text-align: left; border: 1px solid #ddd; }
-    th { background-color: #f4f4f4; }
-    button { margin: 5px; padding: 5px 10px; }
-    #userForm { margin-top: 20px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voinatech | Vasyl's Voina Personal Website</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            color: #ffc107;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-bar {
+            background-color: #111;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .top-bar a {
+            color: #ffc107;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .top-bar a:hover {
+            color: #fff;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 60px;
+        }
+
+        .left-block {
+            width: 45%;
+            text-align: left;
+        }
+
+        .catchy-phrase {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .intro-text {
+            font-size: 1.25rem;
+        }
+
+        .right-block {
+            width: 45%;
+            text-align: center;
+        }
+
+        .personal-photo {
+            width: 100%;
+            max-width: 500px;
+            opacity: 0.8;
+        }
+
+        .footer {
+            background-color: #111;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #ffc107;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #fff;
+        }
+    </style>    
 </head>
 <body>
-  <h1>The website is under construction...</h1>
+    <div class="top-bar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Projects</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="main-content">
+        <div class="left-block">
+            <div class="catchy-phrase">The visible part of the web is just the tip of the iceberg. After clicking the button, the magic of the backend happens behind the scenes…</div>
+            <div class="intro-text">Dedicated and passionate software engineer with over 15 years of experience, specializing in Node.js, PHP, and backend architecture. I began my career as a PHP developer, advancing to senior roles with ease. After mastering ecommerce development with Magento, I transitioned seamlessly to a Node.js technology stack. Unlike those hesitant to embrace new technologies, I have always pursued progress, and I’m proud of that journey.</div>
+        </div>
+        <div class="right-block">
+            <img src="images/vv_croped.png" alt="Vasyl Voina" class="personal-photo">
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://www.linkedin.com/in/vasyl-voina-67b608110" target="_blank"><i class="fab fa-linkedin"></i>&nbsp;LinkedIn</a>
+       <a href="https://github.com/patronik" target="_blank"><i class="fab fa-github"></i>&nbsp;GitHub</a>
+       <a href="https://www.upwork.com/freelancers/~0157264675be1ee59d" target="_blank"><i class="fab fa-upwork"></i>&nbsp;Upwork</a>
+       <a href="https://bsky.app/profile/patronik.bsky.social" target="_blank"><i class="fab fa-bluesky"></i>&nbsp;Bluesky</a>
+    </div>
 </body>
 </html>

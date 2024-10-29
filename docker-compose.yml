@@ -7,6 +7,8 @@ services:
       - .env
     depends_on:
       - mongo
+    volumes:
+      - /var/www/express_app/src:/app/src
 
   mongo:
     image: mongo:latest

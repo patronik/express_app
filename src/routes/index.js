@@ -1,11 +1,4 @@
 import express from 'express';
-import {
-  createUser,
-  getUsers,
-  getUserById,
-  updateUserById,
-  deleteUserById,
-} from '../controllers/userController.js';
 
 const router = express.Router();
 
@@ -16,21 +9,5 @@ router.get('/', (req, res) => {
     }
   );
 });
-
-// Users route
-router.get('/admin', (req, res) => {
-  res.render('admin', { 
-      baseUrl: process.env.BASE_URL || 'http://localhost:3000',
-      title: 'Admin panel' 
-    }
-  );
-});
-
-// User CRUD routes
-router.get('/users', getUsers);            // Read all users
-router.post('/users', createUser);         // Create a new user
-router.get('/users/:id', getUserById);     // Read a user by ID
-router.put('/users/:id', updateUserById);  // Update a user by ID
-router.delete('/users/:id', deleteUserById); // Delete a user by ID
 
 export default router;

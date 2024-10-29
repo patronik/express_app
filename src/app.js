@@ -12,6 +12,9 @@ dotenv.config();
 const app = express();
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+// Serve static files
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Middleware and routes setup
 app.use(express.json());
 app.use(logger);
