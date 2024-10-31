@@ -79,6 +79,18 @@
             opacity: 0.8;
         }
 
+        .bottom-content {            
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            padding: 0px 60px 10px 60px;
+        }
+
+        .bottom-content .bottom-photo {
+            text-align: center;
+            display: none;
+        }
+
         .footer {
             background-color: #111;
             padding: 20px;
@@ -111,10 +123,14 @@
                 font-size: 0.83rem;
             }
 
-            .right-block .personal-photo {
+            .personal-photo {
                 width: 100%;
                 max-width: 400px;
-            }            
+            }   
+            
+            .footer a {
+                font-size: 0.75rem;
+            }  
         }
 
         @media (max-width: 842px) and (min-width: 663px) {
@@ -130,13 +146,17 @@
                 font-size: 0.625rem;
             }
 
-            .right-block .personal-photo {
+            .personal-photo {
                 width: 100%;
                 max-width: 300px;
             }
+
+            .footer a {
+                font-size: 0.75rem;
+            }  
         }  
         
-        @media (max-width: 663px) and (min-width: 568px) {
+        @media (max-width: 663px) {
             .left-block .name-heading {
                 font-size: 1.2rem;
             }
@@ -149,29 +169,32 @@
                 font-size: 0.5rem;
             }
 
-            .right-block .personal-photo {
+            .personal-photo {
                 width: 100%;
                 max-width: 240px;
             }
+
+            .footer a {
+                font-size: 0.75rem;
+            }  
         }  
 
-        @media (max-width: 568px) {
-            .left-block .name-heading {
-                font-size: 1rem;
+        @media (max-width:  568px) {
+            .right-block {
+                display: none;
             }
 
-            .left-block .catchy-phrase {
-                font-size: 0.66rem;
+            .bottom-content .bottom-photo {
+                display: block;
             }
 
-            .left-block  .intro-text {
-                font-size: 0.41rem;
+            .left-block {
+                width: 90%;
             }
 
-            .right-block .personal-photo {
-                width: 100%;
-                max-width: 200px;
-            }
-        }  
+            .footer a {
+                font-size: 0.75rem;
+            }  
+        }                   
     </style>    
 </head>
