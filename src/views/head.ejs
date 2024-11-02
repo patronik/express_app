@@ -45,10 +45,36 @@
             text-align: left;
         }
 
-        .merged-block {
-            width: 90%;
+        .stack-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 60px 20px 60px;
+        }     
+
+        .stack-content .php-stack, 
+        .stack-content .tools-infra,
+        .stack-content .nodejs-stack,
+        .stack-content .dbs-search {
+            width: 20%;
             text-align: center;
-        }
+        }  
+
+        .stack-content .php-stack h2, 
+        .stack-content .tools-infra h2,
+        .stack-content .nodejs-stack h2, 
+        .stack-content .dbs-search h2 {
+           color:#fff;
+        }  
+        
+        .stack-content .php-stack ul, 
+        .stack-content .tools-infra ul,
+        .stack-content .nodejs-stack ul,
+        .stack-content .dbs-search ul {
+            list-style-type: none; /* Remove bullets */
+            margin: 0;
+            padding: 0;
+        }      
 
         .name-heading {
             font-size: 3rem;
