@@ -2,12 +2,70 @@
 <body>
     <%- include('menu'); %>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+            if ("<%= confirmMessage %>" != "") {
+                document.querySelector('.confirmation-message').style.display = 'block';
+            }
+
+            if ("<%= errorMessage %>" != "") {
+                document.querySelector('.error-message').style.display = 'block';
+            }
+        });
+
+        function validateForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (name === '' || email === '' || message === '') {
+                alert('All fields are required.');
+                return;
+            }
+
+            if (!validateEmail(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            document.querySelector('.contact-form').submit();
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+    </script>
+
     <div class="main-content">
-        <div class="merged-block">
-            <div class="contact-info">
-                <p>Email: <a href="mailto:vasyl.voina@gmail.com" style="color: #ffc107; text-decoration: none;">vasyl.voina@gmail.com</a></p>
-                <p>Phone: <a href="tel:+380686275820" style="color: #ffc107; text-decoration: none;">+380686275820</a></p>
+        <div class="contact-info">
+            <h1>Contact Me</h1>
+            <p>Email: <a href="mailto:vv@gmail.com" style="color: #ffc107; text-decoration: none;">vasyl.voina@gmail.com</a></p>
+            <p>Phone: <a href="tel:+3809589323" style="color: #ffc107; text-decoration: none;">+380686275820</a></p>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="contact-form-content">
+            <div class="confirmation-message">                
+                <%= confirmMessage %>
             </div>
+            <div class="error-message">                
+                <%= errorMessage %>
+            </div>
+            <form class="contact-form" onsubmit="validateForm(event)" method="post" action="/send-message">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
         </div>
     </div>
 

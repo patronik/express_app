@@ -128,6 +128,87 @@
             display: none;
         }
 
+        .contact-info {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            font-size: 1.25rem;
+            margin: 10px 0;
+        }
+
+        .contact-info a {
+            color: #ffc107; 
+            text-decoration: none;
+        }
+
+        .contact-info h1 {
+            color: #fff;
+        }
+
+        .contact-form-content {
+            width: 100%;
+            max-width: 600px;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .contact-form-content label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ffc107;
+            font-weight: 700;
+        }
+
+        .contact-form-content input,
+        .contact-form-content textarea {
+            width: 98%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #ffc107;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .contact-form-content button {
+            padding: 10px 20px;
+            font-size: 1.25rem;
+            color: #000;
+            background-color: #ffc107;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form-content button:hover {
+            background-color: #e0a800;
+        }
+
+        .confirmation-message {
+            display: none;
+            margin: 10px 0px 10px 0px;
+            padding: 10px;
+            background-color: green;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+
+        .error-message {
+            display: none;
+            margin: 10px 0px 10px 0px;
+            padding: 10px;
+            background-color: red;
+            color: #fff;
+            border-radius: 5px;
+        }
+
         .footer {
             background-color: #111;
             padding: 20px 0px 20px 0px;
@@ -152,11 +233,13 @@
                 font-size: 2rem;
             }
 
-            .left-block .catchy-phrase {
+            .left-block .catchy-phrase,
+            .contact-info h1 {
                 font-size: 1.33rem;
             }
 
-            .left-block  .intro-text {
+            .left-block  .intro-text,
+            .contact-form label {
                 font-size: 0.83rem;
             }
 
@@ -171,7 +254,8 @@
             
             .footer a, .top-bar a, 
             .main-content p, .stack-content ul li,
-            .download-cv button {
+            .download-cv button,
+            .contact-form button {
                 font-size: 0.75rem;
             }  
         }
@@ -181,11 +265,13 @@
                 font-size: 1.5rem;
             }
 
-            .left-block .catchy-phrase {
+            .left-block .catchy-phrase,
+            .contact-info h1 {
                 font-size: 1rem;
             }
 
-            .left-block  .intro-text {
+            .left-block  .intro-text,
+            .contact-form label {
                 font-size: 0.625rem;
             }
 
@@ -200,7 +286,8 @@
 
             .footer a, .top-bar a, 
             .main-content p, .stack-content ul li,
-            .download-cv button  {
+            .download-cv button,
+            .contact-form button  {
                 font-size: 0.75rem;
             }  
         }  
@@ -210,11 +297,13 @@
                 font-size: 1.2rem;
             }
 
-            .left-block .catchy-phrase {
+            .left-block .catchy-phrase,
+            .contact-info h1 {
                 font-size: 0.8rem;
             }
 
-            .left-block  .intro-text {
+            .left-block .intro-text,
+            .contact-form label {
                 font-size: 0.5rem;
             }
 
@@ -229,7 +318,8 @@
 
             .footer a, .top-bar a, 
             .main-content p, .stack-content ul li,
-            .download-cv button {
+            .download-cv button,
+            .contact-form button {
                 font-size: 0.75rem;
             }  
         }  
