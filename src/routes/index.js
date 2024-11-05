@@ -50,9 +50,9 @@ router.get('/cv', (req, res) => {
   });
 });
 
-router.get('/projects', (req, res) => {
-  res.render('projects', {       
-      title: 'Voinatech | Vasyl\'s Voina Personal Website | Projects' 
+router.get('/portfolio', (req, res) => {
+  res.render('portfolio', {       
+      title: 'Voinatech | Vasyl\'s Voina Personal Website | Portfolio' 
     }
   );
 });
